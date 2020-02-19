@@ -1,1 +1,56 @@
+@font-face { font-family: FranklinGothic; 
+    src: url('fonts/franklin_gothic_medium.ttf'); 
+} 
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
 
+.clock_fragments {
+    font-family: FranklinGothic;
+    font-size: 20px;
+}
+
+.fragment-text {
+    display: block;
+}
+
+.title {
+    text-transform: uppercase;
+}
+.author {
+    text-transform: capitalize;
+}
+
+.time-string {
+    color: red;
+}
+
+.right-align {
+    text-align: right;
+}
+
+#divider{
+    text-align: center;
+    display: block;
+    margin: 10px;
+}
+#author_1{
+    margin-bottom: 75px;
+}
+#title_2{
+    margin-top: 75px;
+}
+
+#fragment_body_single {
+  text-align: center;
+}
+
+#frag_header_single {
+  text-align: center;
+  margin-top: 20px;
+}
