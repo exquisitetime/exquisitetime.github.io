@@ -5,13 +5,104 @@
         <script type="text/javascript" src="clock_script.js"></script>
         <link type="text/css" rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <div class="clock">
-            <span id="hr">00</span>
-            <span> : </span>
-            <span id="min">00</span>
-            <span> : </span>
-            <span id="sec">00</span>
+<body>
+
+<style>
+    @font-face { font-family: FranklinGothic; 
+        src: url('fonts/franklin_gothic_medium.ttf'); 
+    } 
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    .clock_fragments {
+        font-family: FranklinGothic;
+        font-size: 20px;
+    }
+
+    .fragment-text {
+        display: block;
+    }
+
+    .title {
+        text-transform: uppercase;
+    }
+    .author {
+        text-transform: capitalize;
+    }
+
+    .time-string {
+        color: red;
+    }
+
+    .right-align {
+        text-align: right;
+    }
+
+    #divider{
+        text-align: center;
+        display: block;
+        margin: 10px;
+    }
+    #author_1{
+        margin-bottom: 75px;
+    }
+    #title_2{
+        margin-top: 75px;
+    }
+
+    #fragment_body_single {
+      text-align: center;
+    }
+    
+    #frag_header_single {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+</style>
+        <div class='container'>
+        <div class="clock_fragments">
+          <div id = 'one_fragment'>
+            <span id='fragment_body_single' class='fragment-text'>
+<span id='fragment_single_before'>we’d been coming to Almería for more than ten years; my parents had visited</span><span id='fragment_single_time' class='time-string'> one </span> <span id='fragment_single_after'>summer and fallen in love with the place. I’d met countless locals on the promenade. “Your brother is right,” my father said. “The people who live here live with their backs to the sea. Just look at Joaquín.” Joaquín was</span>
+            </span>
+            
+            <div id ='frag_header_single' class='frag-header'>  
+            <span id='title_single' class='fragment-text title'>One Body</span>
+            <span id='author_single' class='fragment-text author'>Roddy Doyle</span>
+            </div>
+          </div>
+          
+          
+            <div id = 'two_fragments'>
+                <div id='frag1'>
+                    <div class='frag-header'>  
+                    <span id='title_1' class='fragment-text right-align title'>Sunday</span>
+                    <span id='author_1' class='fragment-text right-align author'>Camille Bordas</span>
+                    </div>
+
+                    <span id='fragment_body_1' class='fragment-text'>
+<span id='fragment_1_before'>we’d been coming to Almería for more than ten years; my parents had visited</span><span id='fragment_1_time' class='time-string'> one </span> <span id='fragment_1_after'>summer and fallen in love with the place. I’d met countless locals on the promenade. “Your brother is right,” my father said. “The people who live here live with their backs to the sea. Just look at Joaquín.” Joaquín was</span>
+                    </span>
+                </div>
+                <span id='divider'>/</span>
+                <div id ='frag2' class='fragment'>
+<span id='fragment_2_before'>we’d been coming to Almería for more than ten years; my parents had visited</span><span id='fragment_2_time' class='time-string'> one </span> <span id='fragment_2_after'>summer and fallen in love with the place. I’d met countless locals on the promenade. “Your brother is right,” my father said. “The people who live here live with their backs to the sea. Just look at Joaquín.” Joaquín was</span>
+                    </span>
+
+                    <div class='frag-header'>  
+                    <span id='title_2' class='fragment-text title'>One Body</span>
+                    <span id='author_2' class='fragment-text author'>Roddy Doyle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </body>
 </html>

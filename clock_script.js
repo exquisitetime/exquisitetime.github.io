@@ -65,7 +65,7 @@ function init(){
                             minute_string, 
                             newyorker_fragments['fragments'], 
                             newyorker_fragments['fragment_templates']);
-
+    update_clock(frags);     
     clock();
 };
 
@@ -102,6 +102,41 @@ function fragments_for_time(hour_string, minute_string, fragments, templates) {
     }
 }
 
+const decapitalize = (s) => {
+  if (typeof s !== 'string') return ''
+  return s.charAt(0).toLowerCase() + s.slice(1)
+}
+
+function update_clock(frags) {
+    if (frags[1] == null) {
+        set_display('one_fragment', 'block');
+        set_display('two_fragments', 'none');
+        $('title_single', frags[0][1]);
+        $('author_single', frags[0][2]);
+        
+        $('fragment_single_before', decapitalize(frags[0][0][0]));
+        $('fragment_single_time', frags[0][0][1]);
+        $('fragment_single_after', frags[0][0][2]);
+        
+    } else {
+      set_display('one_fragment', 'none');
+      set_display('two_fragments', 'block');
+      
+      $('title_1', frags[0][1]);
+      $('author_1', frags[0][2]);
+      
+      $('fragment_1_before', decapitalize(frags[0][0][0]));
+      $('fragment_1_time', frags[0][0][1]);
+      $('fragment_1_after', frags[0][0][2]);
+      
+      $('title_2', frags[1][1]);
+      $('author_2', frags[1][2]);
+      $('fragment_2_before', decapitalize(frags[1][0][0]));
+      $('fragment_2_time', frags[1][0][1]);
+      $('fragment_2_after', frags[1][0][2]);
+    }
+}
+
 function clock(){
     s++;
     if(s==60){
@@ -120,7 +155,7 @@ function clock(){
     var values = clock_to_string_tuple(h, m);
     var new_hour_string = values[0];
     var new_minute_string = values[1];
-
+    
     if (new_minute_string !== minute_string) {
         hour_string = new_hour_string;
         minute_string = new_minute_string;
@@ -128,11 +163,8 @@ function clock(){
                                         minute_string, 
                                         newyorker_fragments['fragments'], 
                                         newyorker_fragments['fragment_templates']);
-    }
-                           
-    $('sec',s);
-    $('min',frags[1]);
-    $('hr',frags[0]);
+        update_clock(frags);                    
+    }    
     animate=setTimeout(clock,1000);
 };
 
@@ -141,6 +173,10 @@ function $(id,val){
         val='0'+val;
     }
     document.getElementById(id).innerHTML=val;
+};
+
+function set_display(id,display){
+    document.getElementById(id).style.display = display;
 };
 
 window.onload=init;
